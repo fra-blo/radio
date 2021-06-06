@@ -1,8 +1,10 @@
-# radio
+# Radio
 Old radio refurbishment
 
+ ## Project Description
 
-I'm refurbishing a 1954 radio.
+I'm refurbishing the following 1954 radio:
+<img src="images/Radio_general_view.jpg"/>
 
 At the end of the project, the radio can:
 - Play (up to 9) webradios from different countries (up to 5), for a total of 45 webradios
