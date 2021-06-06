@@ -28,7 +28,7 @@ The radio has 2 "brain":
 
 To highlight best parts of the radio, several LEDs powered by Teensy have been installed (see night results on [front image](/images/radio_leds_on.jpg) and [rear image](/images/radio_leds_on_2.jpg)):
 - Inside each lamp
-- Inside the 2 aluminium prominence
+- Inside the 2 aluminium block
 - Next to rear voltage selector to see what voltage is selected
 
 ## Hardware description
