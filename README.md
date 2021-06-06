@@ -35,6 +35,22 @@ To highlight best parts of the radio, several LEDs powered by Teensy have been i
 
 The following synoptic presents links between main hardware parts:<br/>
 <img src="images/Synoptique hardware radio.jpg" width="500"/>
-
 For memory (or to duplicate the project), schematics showing each connection between Teensy and selectors/buttons/LEDs are below presented:<br/>
 <img src="images/teensy_hardware_schematic.png" width="1000"/>
+The main principle to detect the position of each switch (performed by teensy software) is the same as a **matrix keyboard**: 
+1. A 5V is generated on teensy pin B0, B1 & B2 being @ 0V
+2. Eeach Teensy Input Voltage (F0, F1, F4) is read.
+ - If 5V is read on F0, position In_1 is selected. Else another position is selected.
+ - If 5V is read on F1, position In_1 is selected. If 2.5V is read on F1, position In_4 is selected. Else another position is selected.
+ - If 5V is read on F4, position In_1 is selected. If 2.5V is read on F4, position In_4 is selected. Else another position is selected.
+3. A 5V is generated on teensy pin B1, B0 & B2 being @ 0V
+4. Eeach Teensy Input Voltage (F0, F1, F4) is read.
+ - If 5V is read on F0, position In_2 is selected. Else another position is selected.
+ - If 5V is read on F1, position In_2 is selected. If 2.5V is read on F1, position In_5 is selected. Else another position is selected.
+ - If 5V is read on F4, position In_2 is selected. If 2.5V is read on F4, position In_5 is selected. Else another position is selected.
+5. A 5V is generated on teensy pin B2, B0 & B1 being @ 0V
+6. Eeach Teensy Input Voltage (F0, F1, F4) is read.
+ - If 5V is read on F0, position In_3 is selected. Else another position is selected.
+ - If 5V is read on F1, position In_3 is selected. Else another position is selected.
+ - If 5V is read on F4, position In_3 is selected. If 2.5V is read on F4, position In_6 is selected. Else another position is selected.
+7. The teensy software restart @ step 1
