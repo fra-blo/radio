@@ -34,7 +34,7 @@ To highlight best parts of the radio, several LEDs powered by Teensy have been i
 ## Hardware description
 
 The following synoptic presents links between main hardware parts:<br/>
-<img src="images/Synoptique hardware radio.jpg" width="500"/>
+<img src="images/Synoptic_hardware_radio.jpg" width="500"/>
 <br/>For memory (or to duplicate the project), schematics showing each connection between Teensy and selectors/buttons/LEDs are below presented:<br/>
 <img src="images/teensy_hardware_schematic.png" width="1000"/>
 The main principle to detect the position of each switch (performed by teensy software) is the same as a **matrix keyboard**: 
