@@ -54,3 +54,7 @@ The main principle to detect the position of each switch (performed by teensy so
  - If 5V is read on F1, position In_3 is selected. Else another position is selected.
  - If 5V is read on F4, position In_3 is selected. If 2.5V is read on F4, position In_6 is selected. Else another position is selected.
 7. The teensy software restart @ step 1
+
+## Software Description
+### Teensy Software
+### Raspberry Pi Software
