@@ -14,7 +14,7 @@ At the end of the project, the radio can:
 The radio has 4 buttons:
 - A voltage selector at radio rear which will be used to select radio langage. A position change when bluetooth mode is activated result in bluetooth pairing
 - A 5 position switch selector: the selector is tuned to select only three positions for the 3 mode: webradio, bluetooth, jack 
-- A [6 position switch selector](/images/radio_right_button.jpg): to select the different webradio
+- A [6 position switch selector][[/images/radio_right_button.jpg | width=100px | alt=Bridge]]: to select the different webradio
 - A ON/OFF/potentiometer button: to switch ON/OFF radio adn to change volume
 
 The radio has 2 "brain":
