@@ -3,7 +3,7 @@ Old radio refurbishment
 
 ## Project Description
 
-I'm refurbishing the following 1954 radio:
+I'm refurbishing the following 1954 radio:<br/>
 <img src="images/Radio_general_view.jpg" width="500"/>
 
 At the end of the project, the radio can:
