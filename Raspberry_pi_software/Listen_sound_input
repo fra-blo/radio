@@ -1,0 +1,4 @@
+ecouter entree son:
+arecord -f cd - | aplay -
+
+
