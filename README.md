@@ -23,3 +23,8 @@ The radio has 2 "brain":
   * Pair bluetooth devices
   * Stream bluetooth music coming from devices
   * Output the sound to an [Hifiberry Amp 2](https://www.hifiberry.com/shop/bundles/hifiberry-amp2-bundle-4/)
+
+To highlight best parts of the radio, several LEDs powered by Teensy have been installed:
+- Inside each lamp
+- Inside the 2 aluminium prominence
+- Next to rear voltage selector to see what voltage is selected
