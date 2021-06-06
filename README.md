@@ -36,5 +36,5 @@ To highlight best parts of the radio, several LEDs powered by Teensy have been i
 The following synoptic presents links between main hardware parts:<br/>
 <img src="images/Synoptique hardware radio.jpg" width="500"/>
 
-For memory (or to duplicate the project), schematics showing each connection between Teensy and selectors/buttons/LEDs are below presented:
-<img src="images/teensy_hardware_schematic.png" width="500"/>
+For memory (or to duplicate the project), schematics showing each connection between Teensy and selectors/buttons/LEDs are below presented:<br/>
+<img src="images/teensy_hardware_schematic.png" width="1000"/>
