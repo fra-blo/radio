@@ -1,7 +1,7 @@
 # Radio
 Old radio refurbishment
 
- ## Project Description
+## Project Description
 
 I'm refurbishing the following 1954 radio:
 <img src="images/Radio_general_view.jpg"/>
