@@ -22,4 +22,4 @@ The radio has 2 "brain":
   * Launch VLC to stream webradio or to listen jack input
   * Pair bluetooth devices
   * Stream bluetooth music coming from devices
-  * Output the sound to Hifiberry
+  * Output the sound to an [Hifiberry Amp 2](https://www.hifiberry.com/shop/bundles/hifiberry-amp2-bundle-4/)
