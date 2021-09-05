@@ -29,7 +29,7 @@ The radio has 2 "brain":
 To highlight best parts of the radio, several LEDs powered by Teensy have been installed (see night results on [front image](/images/radio_leds_on.jpg) and [rear image](/images/radio_leds_on_2.jpg)):
 - Inside each lamp
 - Inside the 2 aluminium block
-- Next to rear voltage selector to see what voltage is selected
+- Next to rear a voltage selector to see what voltage is selected
 
 ## Hardware description
 
@@ -57,4 +57,15 @@ The main principle to detect the position of each switch (performed by teensy so
 
 ## Software Description
 ### Teensy Software
+
+The code has 3 functions: 
+- Get the position of the 3 selector
+- Get the value of the volume potentiometer
+- Switch ON/OFF the front blue Lamp randomly during 1.2s. This function is to perform an visual effect when changing radio
+
+To access to these function from Raspberry Pi, the serial communication is used and the following commands have to be send to Teensy (with "\n" at the end of the command):
+- "status" to get selector positions
+- "volume" to get potentiometer value
+- "lumiere" to perform the visual effect
+
 ### Raspberry Pi Software
