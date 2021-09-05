@@ -30,8 +30,9 @@
 int position1 = 0;
 int position2 = 1;
 int position3 = 2;
+int position_lumiere = 3;
 
-int position_courante = 0;
+long randNumber;
 
 int selec_type_entree = 0;
 int selec_radio = 0;
@@ -45,82 +46,100 @@ void setup() {
   pinMode(position1, OUTPUT);
   pinMode(position2, OUTPUT);
   pinMode(position3, OUTPUT);
+  pinMode(position_lumiere, OUTPUT);
   digitalWrite(position1, LOW);
   digitalWrite(position2, LOW);
   digitalWrite(position3, LOW);
+  digitalWrite(position_lumiere, HIGH);
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
-// position 1
+  while (Serial.available()) {
+    String command = Serial.readStringUntil('\n');
+
+    if(command == "status"){
+      get_buttons_status();
+    }
+    if(command == "volume"){
+      get_volume();
+    }
+    if(command == "lumiere"){
+      set_lumiere();
+    }
+  }
+}
+
+void get_buttons_status(){
+  // position 1
   digitalWrite(position3, LOW);
   digitalWrite(position1, HIGH);    
-  delay(500);
+  delay(100);
   selec_type_entree = analogRead(A0);
-  selec_radio = analogRead(A1);
-  selec_langue = analogRead(A2);
+  selec_radio = analogRead(A2);
+  selec_langue = analogRead(A1);
 
   if (selec_type_entree > 0){
-    Serial.print("type ");
+    Serial.print("typ ");
     Serial.println(1);
   }
   if (selec_radio > 0){
-    Serial.print("radio ");
+    Serial.print("rad ");
     if (selec_radio > 768){
-      Serial.println(4);
+      Serial.println(1);
     }
     else{
-      Serial.println(1);
+      Serial.println(4);
     }
   }
   if (selec_langue > 0){
     Serial.print("lan ");
-    if (selec_radio > 768){
-      Serial.println(4);
+    if (selec_langue > 768){
+      Serial.println(1);
     }
     else{
-      Serial.println(1);
+      Serial.println(4);
     }
   }
 
 // position 2
   digitalWrite(position1, LOW);
   digitalWrite(position2, HIGH);    
-  delay(500);
+  delay(100);
   selec_type_entree = analogRead(A0);
-  selec_radio = analogRead(A1);
-  selec_langue = analogRead(A2);
+  selec_radio = analogRead(A2);
+  selec_langue = analogRead(A1);
 
   if (selec_type_entree > 0){
-    Serial.print("type ");
+    Serial.print("typ ");
     Serial.println(2);
   }
   if (selec_radio > 0){
-    Serial.print("radio ");
+    Serial.print("rad ");
     if (selec_radio > 768){
-      Serial.println(5);
+      Serial.println(2);
     }
     else{
-      Serial.println(2);
+      Serial.println(5);
     }
   }
   if (selec_langue > 0){
     Serial.print("lan ");
-    if (selec_radio > 768){
-      Serial.println(5);
+    if (selec_langue > 768){
+      Serial.println(2);
     }
     else{
-      Serial.println(2);
+      Serial.println(5);
     }
   }
 
 // position 3
   digitalWrite(position2, LOW);
   digitalWrite(position3, HIGH);    
-  delay(500);
+  delay(100);
   selec_type_entree = analogRead(A0);
-  selec_radio = analogRead(A1);
-  selec_langue = analogRead(A2);
+  selec_radio = analogRead(A2);
+  selec_langue = analogRead(A1);
 
   if (selec_type_entree > 0){
     Serial.print("typ ");
@@ -129,20 +148,35 @@ void loop() {
   if (selec_radio > 0){
     Serial.print("rad ");
     if (selec_radio > 768){
-      Serial.println(6);
+      Serial.println(3);
     }
     else{
-      Serial.println(3);
+      Serial.println(6);
     }
   }
   if (selec_langue > 0){
     Serial.print("lan ");
     Serial.println(3);
   }
+}
 
-// volume musique
+void get_volume(){
+  // volume musique
   volume_musique = analogRead(A3);
   Serial.print("vol ");
-  Serial.println(volume_musique);
-  
+  Serial.println(volume_musique); 
+}
+
+void set_lumiere(){
+  for(int i=0; i<40; i++){
+    randNumber = random(2);
+    if(randNumber == 0){
+      digitalWrite(position_lumiere, LOW);
+    }
+    else{
+      digitalWrite(position_lumiere, HIGH);
+    }
+    delay(30);  
+  }
+  digitalWrite(position_lumiere, HIGH);
 }
