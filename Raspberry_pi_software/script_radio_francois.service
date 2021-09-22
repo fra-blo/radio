@@ -1,0 +1,10 @@
+[Unit]
+Description=Launch of radio script
+
+[Service]
+Type=idle
+ExecStartPre=/bin/sh -c 'until ping -c1 google.com; do sleep 1; done;'
+ExecStart=/usr/bin/python3 /home/pi/Desktop/radio_script.py
+
+[Install]
+WantedBy=multi-user.target

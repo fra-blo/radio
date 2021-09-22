@@ -1,0 +1,23 @@
+# pour mettre a defaut le hifiberry en sortie, modification du fichier /etc/pulse/client.conf en mettant ça:
+default-sink = alsa_output.platform-soc_sound.multichannel-output
+
+# commande pour démarrer pulseaudio au démarrage quand rpi en headless (sinon appairage bluetooth non fonctionnel)
+sudo systemctl --user enable pulseaudio
+
+# commande augmentation du son
+pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+# commande pour écouter l'entrée son
+arecord -f cd - | aplay -
+
+# commande cmd pour lancer une seule instance de vlc
+vlc --one-instance http://stream.virginradio.fr/virgin.mp3
+
+# site de liste des flux radios
+http://fluxradios.blogspot.com/
+
+#ligne pour exec programme après connection wifi
+ExecStartPre=/bin/sh -c 'until ping -c1 google.com; do sleep 1; done;'
+
+#mplayer
+sudo mplayer -loop 0 'http://www.icast.connectmedia.hu/4748/mr7.mp3'
